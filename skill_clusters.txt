@@ -1,0 +1,15 @@
+SKILL CLUSTERS FROM APRIORI BUNDLES
+==================================================
+
+Cluster 1:
+  Skills: Firewalls, Network Security
+
+Cluster 2:
+  Skills: Information Architecture, Prototyping, Design Systems
+
+Cluster 3:
+  Skills: Teamwork, Adobe Xd, Usability Testing, Visual Design, Wireframing, User Research, Figma
+
+Cluster 4:
+  Skills: Data Science, Market Research, Stakeholder Management
+

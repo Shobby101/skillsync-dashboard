@@ -1,0 +1,31 @@
+skill,demand_percentage,supply_percentage,gap_score,status
+Teamwork,66.7,31.03,35.67,Critical Shortage
+Problem Solving,67.85,33.93,33.92,Critical Shortage
+Communication,65.75,36.69,29.06,Critical Shortage
+Python,56.05,32.61,23.44,Critical Shortage
+Git,47.45,25.23,22.22,Critical Shortage
+Rest Apis,42.3,20.69,21.61,Critical Shortage
+SQL,45.25,24.9,20.35,Critical Shortage
+JavaScript,32.4,17.13,15.27,Critical Shortage
+Unit Testing,12.95,0.0,12.95,Critical Shortage
+Node.js,18.5,5.86,12.64,Critical Shortage
+Docker,25.5,13.5,12.0,Critical Shortage
+MongoDB,18.9,7.51,11.39,Critical Shortage
+React,16.8,5.67,11.13,Critical Shortage
+HTML/CSS,18.9,10.47,8.43,Moderate Shortage
+Figma,10.9,2.57,8.33,Moderate Shortage
+Api Design,8.0,0.0,8.0,Moderate Shortage
+TypeScript,15.95,8.56,7.39,Moderate Shortage
+Redux,7.25,0.0,7.25,Moderate Shortage
+Object-Oriented Programming,13.5,7.38,6.12,Moderate Shortage
+Debugging,13.55,7.77,5.78,Moderate Shortage
+PostgreSQL,9.4,3.62,5.78,Moderate Shortage
+Algorithms,12.9,7.18,5.72,Moderate Shortage
+Data Structures,12.9,7.31,5.59,Moderate Shortage
+Linux,32.4,27.14,5.26,Moderate Shortage
+Django,8.55,4.41,4.14,Mild Shortage
+Dart,4.0,0.0,4.0,Mild Shortage
+Scala,3.4,0.0,3.4,Mild Shortage
+Redis,8.1,4.74,3.36,Mild Shortage
+Hadoop,3.3,0.0,3.3,Mild Shortage
+Jira,6.8,3.56,3.24,Mild Shortage
