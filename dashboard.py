@@ -1,8 +1,3 @@
-"""
-Skill Sync Nigeria - Updated
-Restored 27+ roles in Recommendations, removed High Shortage label
-Run with: streamlit run dashboard.py
-"""
 
 import streamlit as st
 import pandas as pd
@@ -14,21 +9,15 @@ import os
 import math
 from datetime import datetime
 
-# ============================================================
-# PAGE CONFIGURATION
-# ============================================================
 
+# PAGE CONFIGURATION
 st.set_page_config(
     page_title="Skill Sync Nigeria",
     page_icon="🎯",
     layout="wide",
     initial_sidebar_state="collapsed"
 )
-
-# ============================================================
-# PROFESSIONAL COLOR PALETTE
-# ============================================================
-
+ COLOR PALETTE
 COLORS = {
     'primary': '#2C5F2D',
     'primary-light': '#4A7C59',
@@ -51,9 +40,8 @@ COLORS = {
     'gradient-soft': 'linear-gradient(135deg, #E8F3E8 0%, #F5F7F5 100%)'
 }
 
-# ============================================================
-# CUSTOM CSS
-# ============================================================
+
+#  CSS
 
 st.markdown(f"""
 <style>
@@ -226,9 +214,7 @@ st.markdown(f"""
 </style>
 """, unsafe_allow_html=True)
 
-# ============================================================
 # USER AUTHENTICATION
-# ============================================================
 
 USER_DB_FILE = 'users.json'
 PROFILE_DB_FILE = 'profiles.json'
@@ -305,9 +291,7 @@ def change_password(username, old_password, new_password):
 init_user_db()
 init_profile_db()
 
-# ============================================================
 # SESSION STATE
-# ============================================================
 
 def init_session_state():
     if 'logged_in' not in st.session_state:
@@ -319,9 +303,7 @@ def init_session_state():
 
 init_session_state()
 
-# ============================================================
 # HEADER & NAVIGATION
-# ============================================================
 
 def show_skillsync_header():
     st.markdown(f"""
@@ -354,9 +336,7 @@ def logout():
     st.session_state.username = None
     st.rerun()
 
-# ============================================================
 # DATA LOADING
-# ============================================================
 
 @st.cache_data
 def load_gap_analysis():
@@ -423,9 +403,7 @@ def load_design_skill_bundles():
             'confidence': [0.97, 0.96, 0.95, 0.94, 0.93, 0.92, 0.91, 0.90, 0.89, 0.88, 0.87, 0.86]
         })
 
-# ============================================================
 # LEARNING RESOURCES DATABASE
-# ============================================================
 
 LEARNING_RESOURCES = {
     'Python': {
@@ -465,9 +443,8 @@ LEARNING_RESOURCES = {
     }
 }
 
-# ============================================================
-# COMPREHENSIVE LEARNING RECOMMENDATIONS (27+ ROLES - FULLY RESTORED)
-# ============================================================
+
+# COMPREHENSIVE LEARNING RECOMMENDATIONS 
 
 LEARNING_RECOMMENDATIONS = {
     'Software Developer': {
@@ -639,10 +616,7 @@ LEARNING_RECOMMENDATIONS = {
         'certifications': ['Cloudera Certified Data Engineer', 'Databricks Certified Engineer', 'AWS Big Data Specialty']
     }
 }
-
-# ============================================================
 # HELPER FUNCTIONS
-# ============================================================
 
 def show_metric_explanations():
     with st.expander("Understanding Skill Bundles"):
@@ -706,9 +680,7 @@ def create_skill_network_graph(rules_df, top_n=20):
     )
     return fig
 
-# ============================================================
 # TECHNICAL SKILL BUNDLES PAGE
-# ============================================================
 
 def technical_bundles_page():
     st.markdown("### Technical Skill Bundles")
@@ -766,9 +738,7 @@ def technical_bundles_page():
     csv = filtered_rules.to_csv(index=False)
     st.download_button("Download Technical Skill Bundles (CSV)", csv, "technical_skill_bundles.csv", "text/csv")
 
-# ============================================================
 # DESIGN SKILL BUNDLES PAGE
-# ============================================================
 
 def design_bundles_page():
     st.markdown("### Design & UX Skill Bundles")
@@ -809,9 +779,8 @@ def design_bundles_page():
     csv = filtered_rules.to_csv(index=False)
     st.download_button("Download Design Skill Bundles (CSV)", csv, "design_skill_bundles.csv", "text/csv")
 
-# ============================================================
-# LEARNING RECOMMENDATIONS PAGE (FULLY RESTORED WITH 27+ ROLES)
-# ============================================================
+
+# LEARNING RECOMMENDATIONS PAGE 
 
 def recommendations_page():
     st.markdown("### Personalized Learning Recommendations")
@@ -914,9 +883,7 @@ def recommendations_page():
     """
     st.download_button("📥 Download Learning Plan", plan_text, f"{selected_role.replace(' ', '_')}_learning_plan.txt", "text/plain")
 
-# ============================================================
 # GAP ANALYSIS PAGE
-# ============================================================
 
 def gap_analysis_page():
     st.markdown("### Skills Gap Analysis")
@@ -943,9 +910,7 @@ def gap_analysis_page():
     csv = filtered_df.to_csv(index=False)
     st.download_button("Download Gap Analysis (CSV)", csv, "skills_gap_analysis.csv", "text/csv")
 
-# ============================================================
-# DASHBOARD PAGE (REMOVED HIGH SHORTAGE LABEL)
-# ============================================================
+# DASHBOARD PAGE 
 
 def dashboard_page():
     st.markdown("### Nigeria Tech Skills Intelligence")
@@ -1002,10 +967,7 @@ def dashboard_page():
         fig.add_shape(type="line", x0=0, y0=0, x1=100, y1=100, line=dict(color=COLORS['gray'], dash="dash", width=1))
         fig.update_layout(height=450, plot_bgcolor='white', margin=dict(l=20, r=20, t=20, b=20))
         st.plotly_chart(fig, use_container_width=True, config={'scrollZoom': True})
-
-# ============================================================
 # DATA EXPLORER PAGE
-# ============================================================
 
 def data_page():
     st.markdown("### Data Explorer")
@@ -1026,11 +988,7 @@ def data_page():
         design_df = load_design_skill_bundles()
         st.dataframe(design_df, use_container_width=True)
         st.download_button("Download CSV", design_df.to_csv(index=False), "design_bundles.csv", "text/csv")
-
-# ============================================================
 # PROFILE PAGE
-# ============================================================
-
 def profile_page():
     st.markdown("### My Profile")
     
@@ -1116,18 +1074,11 @@ def profile_page():
         with col2:
             st.metric("Recommendations", "12")
         st.markdown('</div>', unsafe_allow_html=True)
-    
-    # ============================================================
-    # LOGOUT BUTTON - ADDED HERE
-    # ============================================================
+    # LOGOUT BUTTON 
     st.markdown("---")
     if st.button("🚪 Logout", use_container_width=True):
         logout()
-
-# ============================================================
 # LOGIN PAGE
-# ============================================================
-
 def login_page():
     st.markdown(f"""
     <style>
@@ -1215,9 +1166,9 @@ def login_page():
     
     st.markdown("</div></div>", unsafe_allow_html=True)
 
-# ============================================================
-# MAIN DASHBOARD
-# ============================================================
+
+#  DASHBOARD
+
 
 def main_dashboard():
     show_skillsync_header()
@@ -1248,10 +1199,8 @@ def main_dashboard():
         <p>Skill Sync Nigeria © 2024 | Tech Skills Intelligence | Bridging the Demand-Supply Divide</p>
     </div>
     """, unsafe_allow_html=True)
+# APP
 
-# ============================================================
-# MAIN APP
-# ============================================================
 
 def main():
     if st.session_state.logged_in:
