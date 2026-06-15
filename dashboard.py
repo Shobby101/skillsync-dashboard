@@ -70,7 +70,7 @@ st.markdown(f"""
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 1.8em;
+        font-size: 1.79em;
     }}
     
     .logo-text h1 {{
