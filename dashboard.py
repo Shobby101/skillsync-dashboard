@@ -17,7 +17,7 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="collapsed"
 )
- COLOR PALETTE
+ #COLOR PALETTE
 COLORS = {
     'primary': '#2C5F2D',
     'primary-light': '#4A7C59',
