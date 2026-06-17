@@ -1196,7 +1196,7 @@ def main_dashboard():
     
     st.markdown(f"""
     <div class="footer">
-        <p>Skill Sync Nigeria © 2024 | Tech Skills Intelligence | Bridging the Demand-Supply Divide</p>
+        <p>Skill Sync Nigeria © 2026 | Tech Skills Intelligence | Bridging the Demand-Supply Divide</p>
     </div>
     """, unsafe_allow_html=True)
 # APP
